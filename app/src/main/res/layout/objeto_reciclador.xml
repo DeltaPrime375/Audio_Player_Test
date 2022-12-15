@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/purple_700"
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:paddingTop="@dimen/et_margen"
+    android:paddingBottom="@dimen/et_margen"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:id="@+id/vista_icono"
+        android:layout_centerVertical="true"
+        android:src="@drawable/disco"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:id="@+id/titulo_cancion"
+        android:layout_toEndOf="@id/vista_icono"
+        android:padding="@dimen/et_margen"
+        android:maxLines="1"
+        android:ellipsize="end"
+        tools:text="@string/titulo_cancion"
+        android:textColor="@color/black"/>
+
+</RelativeLayout>
