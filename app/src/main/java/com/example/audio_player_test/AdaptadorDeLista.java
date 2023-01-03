@@ -1,6 +1,7 @@
 package com.example.audio_player_test;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +30,19 @@ public class AdaptadorDeLista extends RecyclerView.Adapter<AdaptadorDeLista.view
     public void onBindViewHolder(viewHolder holder, int position) {
         ModeloAudio datosCanciones = ListaCanciones.get(position);
         holder.VistaTitulo.setText(datosCanciones.getTitulo());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MiReproductor.getInstance().reset();
+                MiReproductor.IndiceActual= position;
+                Intent Intencion = new Intent(contexto, ActividadReproductor.class);
+                Intencion.putExtra("LISTA",ListaCanciones);
+                Intencion.setFlags(Intencion.FLAG_ACTIVITY_NEW_TASK);
+                contexto.startActivity(Intencion);
+            }
+        });
+
     }
 
     @Override
